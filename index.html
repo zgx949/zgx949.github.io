@@ -1,10 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<meta charset="UTF-8">
+<title>嵌入页面示例</title>
+<style>
+    /* 移除iframe的默认边框 */
+    iframe {
+        border: none; /* 去除边框 */
+        width: 100%; /* 宽度100%适应容器 */
+        height: 100vh; /* 高度100vh适应视口高度 */
+    }
+</style>
 </head>
 <body>
-hello github
+
+<!-- iframe元素 -->
+<iframe id="myIframe" src="https://www.lefthand.top"></iframe>
+
+<!-- 全屏按钮，用于触发全屏事件 -->
+<button onclick="requestFullScreen()">进入全屏</button>
+
+<script>
+    // 请求全屏的函数
+    function requestFullScreen() {
+        var elem = document.getElementById("myIframe");
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) { /* Safari */
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE11 */
+            elem.msRequestFullscreen();
+        }
+    }
+</script>
+
 </body>
 </html>
