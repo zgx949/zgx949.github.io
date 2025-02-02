@@ -2,20 +2,59 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<title>嵌入页面示例</title>
+<title>Greyson的Blog</title>
 <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
     /* 移除iframe的默认边框 */
     iframe {
         border: none; /* 去除边框 */
         width: 100%; /* 宽度100%适应容器 */
-        height: 100vh; /* 高度100vh适应视口高度 */
+        height: calc(100vh - 60px); /* 高度100vh适应视口高度，减去header的高度 */
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 20px 2px;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+    }
+
+    button:hover {
+        background-color: #45a049;
     }
 </style>
 </head>
 <body>
 
+<header>嵌入页面示例</header>
+
 <!-- iframe元素 -->
-<iframe id="myIframe" src="https://www.lefthand.top"></iframe>
+<iframe id="myIframe" src="https://www.lefthand.top" title="Embedded Page"></iframe>
 
 <!-- 全屏按钮，用于触发全屏事件 -->
 <button onclick="requestFullScreen()">进入全屏</button>
